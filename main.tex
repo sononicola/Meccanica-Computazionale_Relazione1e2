@@ -1,0 +1,38 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{geometry}\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
+%\pagestyle{empty} %toglie il numero a pié di pagina e in testata
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{amsmath,amsfonts,amssymb,braket,mathrsfs}
+%\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{float}
+\usepackage{tabularx,booktabs}
+%\usepackage{minipage}
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{tikz}
+\usepackage{stanlimod}
+\usepackage{xspace}% per lo spazio intelligente
+\newcommand{\e}{\`E\xspace}  %E'
+\usepackage{caption}
+\usepackage{titlesec} % per formato custom dei titoli dei capitoli
+\captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}}
+% redefinizione del formato del titolo del capitolo
+      % da formato
+      %   Capitolo X
+      %   Titolo capitolo
+      % a formato
+      %   X   Titolo capitolo 
+	\titleformat{\chapter}
+        {\normalfont\Huge\bfseries}{}{0em}{}
+	\titlespacing*{\chapter}{0pt}{0in}{0.02in}
+	\titlespacing*{\section}{0pt}{0.2in}{0.02in}
+	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
+\begin{document}
+    \input{Relazione1.tex}
+    \input{Relazione2.tex}
+\end{document}
+
+
