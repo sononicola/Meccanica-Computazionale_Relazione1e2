@@ -1,0 +1,51 @@
+\chapter{Prima Esercitazione}
+%struttura di partenza
+\input{rel1/img1/StrutturaDiPartenza}
+Ai valori di $q$, $L$, $k$ e $\Delta T$ sono stati assegnati i valori in modo tale che gli effetti  tensionali di ciascuno di essi fosse confrontabile con quello degli altri. 
+Dopo varie prove si sono ottenuti i seguenti valori, con i quali si sono eseguiti tutti i successivi calcoli:
+\begin{align*}
+	q &= \SI{1000}{\newton \per \metre}\\
+	L &= \SI{3000}{\newton}\\
+	k &= \SI{100000}{\newton \per \metre}\\
+	\Delta T &= \SI{100}{\celsius}
+\end{align*}
+La sezione delle travi è stata scelta facendo attenzione ad avere una trave snella ovvero avendo una lunghezza pari a $10$ volte lo spessore medio e rispettando la verifica a presso-flessione in campo elastico 
+\[
+\frac{N}{A} + \frac{M}{W} < \SI{200}{\mega\pascal}
+\]
+Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seguenti caratteristiche
+\begin{center}
+\begin{minipage}{6cm}
+	\includegraphics[width=60mm]{rel1/img1/tubi-quadri.pdf}
+\end{minipage}
+\begin{minipage}{6cm}
+	\begin{align*}
+		a &= \SI{200}{\milli\metre}\\
+		s &= \SI{6}{\milli\metre}\\
+		A &= \SI{46.56}{\centi\metre\squared}\\
+		J_X = J_y &= \SI{2923.35}{\centi\metre\tothe{4}}\\
+		W_x = W_y &= \SI{292.33}{\centi\metre\cubed}
+	\end{align*}
+\end{minipage}
+\end{center}
+%Struttura con i nomi ai punti
+\input{rel1/img1/StrutturaConNomiPunti}
+%-----
+	\input{rel1/PLV.tex}
+	\input{rel1/LineaElastica.tex}
+    \input{rel1/MetodoMatriciale.tex}
+    \input{rel1/Abaqus1.tex}
+%-----
+\section{Confronto spostamenti in A}
+%tabella equazioni:
+\begin{table}[H]
+\caption{Confronto spostamenti nei nodi}
+\centering
+\begin{tabular}{cSSS}
+	\toprule
+	\textbf{Nodo}&\textbf{PLV} & \textbf{Matriciale} & \textbf{FEM}\\
+	\midrule
+	10 & 1.111& 1.111& 1.111\\	 
+	\bottomrule
+\end{tabular}
+\end{table}

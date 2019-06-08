@@ -18,22 +18,22 @@
 \newcommand{\e}{\`E\xspace}  %E'
 \usepackage{caption}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
-\usepackage{sideways}%%%
+%\usepackage{sideways}%%%
 \captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}}
 % redefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
       %   Titolo capitolo
-      % a formato
-      %   X   Titolo capitolo 
+      %   a formato
+      %      Titolo capitolo 
 	\titleformat{\chapter}
         {\normalfont\Huge\bfseries}{}{0em}{}
 	\titlespacing*{\chapter}{0pt}{0in}{0.02in}
 	\titlespacing*{\section}{0pt}{0.2in}{0.02in}
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 \begin{document}
-    \input{Relazione1.tex}
-    \input{Relazione2.tex}
+    \input{rel1/Relazione1.tex}
+	\input{rel2/Relazione2.tex}    
 \end{document}
 
 
