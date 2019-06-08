@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{report}
-\usepackage{geometry}\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
-%\pagestyle{empty} %toglie il numero a pié di pagina e in testata
+\usepackage{geometry}\geometry{a4paper,top=3.5cm,bottom=3.5cm,%
+left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
@@ -16,10 +16,8 @@
 \usepackage{stanlimod}
 \usepackage{xspace}% per lo spazio intelligente
 \newcommand{\e}{\`E\xspace}  %E'
-\usepackage{caption}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
 %\usepackage{sideways}%%%
-\captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}}
 % redefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
@@ -31,6 +29,20 @@
 	\titlespacing*{\chapter}{0pt}{0in}{0.02in}
 	\titlespacing*{\section}{0pt}{0.2in}{0.02in}
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
+%serve per la didascalia di tabelle e figure:
+\usepackage{caption}
+\captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}} %didascalie a più righe allineate e il nome in grassetto
+%non viene allineato a sinistra se la didascalia è corta una sola riga. PERCHé??
+\usepackage{xcolor}
+%serve per mettere il codice con lo sfondo grigio chiaro (cap 4)
+\usepackage{listings} 
+\lstset{basicstyle=\scriptsize\ttfamily,
+backgroundcolor=\color{lightgray},%
+boxpos=c,%
+stringstyle=\itshape,		
+lineskip=3pt,%
+numbers=left,
+numberstyle=\tiny,}
 \begin{document}
     \input{rel1/Relazione1.tex}
 	\input{rel2/Relazione2.tex}    
