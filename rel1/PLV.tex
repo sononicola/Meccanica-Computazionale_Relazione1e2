@@ -1,0 +1,32 @@
+\section{Analisi tramite PLV}
+\e stata degradata la molla bla bla bla
+%Diagramma momenti delle strutture 0 e 1
+\input{rel1/img1/PLVDiagrammaMomenti}
+%tabella equazioni:
+\begin{table}[H]
+\caption{Equazioni dei momenti delle strutture (0) e (1)}
+\[
+\begin{array}{cccc}
+	\toprule
+	\textbf{Asta}&\textbf{Lunghezza} & \textbf{Struttura (0)} & \textbf{Struttura (1)}\\
+	\midrule
+	1&l&\dfrac{7}{2}ql^2-\left(F+ql\right)z&l\\[2ex]
+	2&l&\dfrac{7}{2}ql^2-(F+ql)l-\left(F+\dfrac{ql}{2}\right)z &l-z\\
+	3&l&\dfrac{qz^2}{2}&0\\[2ex]
+	4&\dfrac{l}{2}&\dfrac{ql^2}{2}+\left(\dfrac{ql}{2} + ql\right)z&0\\[2ex]
+	5&\sqrt{\dfrac{5}{4}}l&\sqrt{\dfrac{5}{4}}Fz&0\\
+	\bottomrule
+\end{array}
+\]
+\end{table}
+%Diagramma sforzo normale strutture 0 e 1
+\input{rel1/img1/PLVDiagrammaNormale}
+\begin{align*}
+	\mathscr{L}_{int} &= \mathscr{L}_{ext}	\\
+	\eta_{01}+x_1 \eta_{11} + \eta_T &= - \eta_m V_3 \\
+	& \qquad \eta_{01}= \frac{1}{EI}\sum_{k}\int_L m_0 \cdot m_1\\
+	& \qquad \eta_{11}= \frac{1}{EI}\sum_{k}\int_L m_1 \cdot m_1\\
+	& \qquad \eta_T = \frac{2 \alpha \Delta T}{H}l^2 \\
+	& \qquad \eta_m = \frac{1}{k_m} \left( F+\frac{ql}{2}\right)\\
+	 \hookrightarrow \quad  x_1 &= \frac{15}{2}ql
+\end{align*}
