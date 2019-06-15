@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{amsmath,amsfonts,amssymb,braket,mathrsfs}
+%\setcounter{MaxMatrixCols}{20}
 %\usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{float}
 \usepackage{tabularx,booktabs}
@@ -14,12 +15,20 @@
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{tikz}
 \usepackage{stanlimod}
+\usepackage{lscape}
 \usepackage{xspace}% per lo spazio intelligente
 \newcommand{\e}{\`E\xspace}  %E'
 \usepackage{caption}
 \usepackage{titlesec} % per formato custom dei titoli dei capitoli
-\usepackage{sideways}%%%
+%\usepackage{sideways}%%%
 \captionsetup{tableposition=top,figureposition=bottom,font=small}\captionsetup{format=hang,labelfont={bf}}
+\usepackage[strict]{changepage}
+
+\usepackage{mathtools}
+\newcommand\sumim{\sum\limits_{i=1}^{m}}
+
+
+
 % redefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
@@ -33,6 +42,7 @@
 	\titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 \begin{document}
     \input{Relazione1.tex}
+    \input{MatriceKrid.tex}
     \input{Relazione2.tex}
 \end{document}
 
