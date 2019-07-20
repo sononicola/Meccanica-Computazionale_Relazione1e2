@@ -1,19 +1,49 @@
 \chapter{Prima Esercitazione}
 %struttura di partenza
-\input{rel1/img1/StrutturaDiPartenza}
-Ai valori di $q$, $L$, $k$ e $\Delta T$ sono stati assegnati i valori in modo tale che gli effetti  tensionali di ciascuno di essi fosse confrontabile con quello degli altri. 
-Dopo varie prove si sono ottenuti i seguenti valori, con i quali si sono eseguiti tutti i successivi calcoli:
+Il problema riguarda la risoluzione di una struttura iperstatica (riportata in figura \ref{fig:StrutturaDiPartenza}) soggetta a dei carichi tramite tre metodi: linea elastica, matriciale e FEM tramite il software Abaqus. 
+\e stato richiesto inoltre il calcolo dello spostamento verticale nel nodo A e il confronto tra le sollecitazioni interne.
+\input{rel1/img1/StrutturaDiPartenza}%
+\begin{table}[htb]
+    \centering
+    \caption{Effetti dei singoli carichi. Ogni riga indica l'azione che il carico crea nel caso tutti gli altri siano nulli nel nodo 2}
+    \label{tab:confrontoSingoliCarichi}
+    \begin{tabular}{l
+                    S[table-format=1.5,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=1.5,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                    S[table-format=1.5,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]}  
+        \toprule
+    	Azione & \multicolumn{1}{c}{$U_1$} & \multicolumn{1}{c}{$U_2$}& \multicolumn{1}{c}{$UR_3$}\\
+    	& \multicolumn{1}{c}{\SI{}{\meter}} & \multicolumn{1}{c}{\SI{}{\meter}}& \multicolumn{1}{c}{\SI{}{\radian}}\\
+	\midrule
+	$\Delta T = \SI{40}{\degree}$ & 6.2052e-6   & -2.4687e-2  & -1.6458e-2\\
+	$\Delta T = \SI{100}{\degree}$ & 1.5513e-5  &-6.1718e-2 & -4.1145e-2\\
+	$F = \SI{600}{\newton}$ & -3.54432e-6 & 1.1858e-2  &  6.40955e-3\\
+	$q = \SI{300}{\newton\per\meter}$ & -3.38322e-6 &  1.3459e-2 &  6.73009e-3\\
+	\bottomrule
+\end{tabular}
+\end{table}
+I valori di $q$, $F$, $k$ e $\Delta T$ sono stati assegnati in modo tale che gli effetti  tensionali di ciascuno di essi fosse confrontabile con quello degli altri. 
+Dopo varie prove riportate in tabella \ref{tab:confrontoSingoliCarichi} si sono ottenuti i seguenti valori, con i quali si sono eseguiti tutti i successivi calcoli:
 \begin{align*}
-	q &= \SI{1000}{\newton \per \metre}\\
-	L &= \SI{3000}{\newton}\\
-	k &= \SI{100000}{\newton \per \metre}\\
-	\Delta T &= \SI{100}{\celsius}
+	q &= \SI{300}{\newton \per \metre}\\
+	F &= \SI{600}{\newton}\\
+	k &= \SI{22289.6}{\newton \per \metre}\\
+	\Delta T &= \SI{40}{\celsius}
 \end{align*}
 La sezione delle travi è stata scelta facendo attenzione ad avere una trave snella ovvero avendo una lunghezza pari a $10$ volte lo spessore medio e rispettando la verifica a presso-flessione in campo elastico 
 \[
 \frac{N}{A} + \frac{M}{W} < \SI{200}{\mega\pascal}
 \]
-Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seguenti caratteristiche
+Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seguenti caratteristiche:
 \begin{center}
 \begin{minipage}{6cm}
 	\includegraphics[width=60mm]{rel1/img1/tubi-quadri.pdf}
@@ -31,7 +61,7 @@ Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seg
 %Struttura con i nomi ai punti
 \input{rel1/img1/StrutturaConNomiPunti}
 %-----
-	\input{rel1/PLV.tex}
+	%\input{rel1/PLV.tex}
 	\input{rel1/LineaElastica.tex}
     \input{rel1/MetodoMatriciale.tex}
     \input{rel1/Abaqus1.tex}

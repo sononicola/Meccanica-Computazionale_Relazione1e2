@@ -13,6 +13,8 @@ left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
 %\usepackage{minipage}
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{tikz}
+\usepackage{pgfplots,pgfplotstable}
+\usetikzlibrary{patterns} % per il tratteggio
 \usepackage{stanlimod}
 \usepackage{xspace}% per lo spazio intelligente
 \newcommand{\e}{\`E\xspace}  %E'
@@ -43,6 +45,8 @@ stringstyle=\itshape,
 lineskip=3pt,%
 numbers=left,
 numberstyle=\tiny,}
+\usepackage{lscape}
+\usepackage{multirow}
 \begin{document}
     \input{rel1/Relazione1.tex}
 	\input{rel2/Relazione2.tex}    

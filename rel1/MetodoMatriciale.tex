@@ -1,86 +1,225 @@
 \section{Analisi tramite calcolo matriciale}
-
-
 \[
-   \left(
-\begin{array}{ccccccccccccccc}
- \frac{8 A \text{EY}}{5 \sqrt{5} L}+\frac{A \text{EY}}{L}+\frac{96 \text{EY}
-   \text{IN}}{25 \sqrt{5} L^3}+\frac{12 \text{EY} \text{IN}}{L^3} & \frac{192
-   \text{EY} \text{IN}}{25 \sqrt{5} L^3}-\frac{4 A \text{EY}}{5 \sqrt{5} L} &
-   \frac{6 \text{EY} \text{IN}}{L^2} & \frac{24 \text{EY} \text{IN}}{5
-   \sqrt{5} L^2} & -\frac{12 \text{EY} \text{IN}}{L^3} & 0 & 0 & \frac{6
-   \text{EY} \text{IN}}{L^2} & 0 & 0 & 0 & 0 & -\frac{8 A \text{EY}}{5
-   \sqrt{5} L}-\frac{96 \text{EY} \text{IN}}{25 \sqrt{5} L^3} & \frac{4 A
-   \text{EY}}{5 \sqrt{5} L}-\frac{192 \text{EY} \text{IN}}{25 \sqrt{5} L^3} &
-   \frac{24 \text{EY} \text{IN}}{5 \sqrt{5} L^2} \\
- \frac{192 \text{EY} \text{IN}}{25 \sqrt{5} L^3}-\frac{4 A \text{EY}}{5
-   \sqrt{5} L} & \frac{2 A \text{EY}}{5 \sqrt{5} L}+\frac{A
-   \text{EY}}{L}+\frac{384 \text{EY} \text{IN}}{25 \sqrt{5} L^3}+\frac{12
-   \text{EY} \text{IN}}{L^3} & -\frac{6 \text{EY} \text{IN}}{L^2} & \frac{48
-   \text{EY} \text{IN}}{5 \sqrt{5} L^2} & 0 & -\frac{A \text{EY}}{L} & 0 & 0 &
-   0 & 0 & 0 & 0 & \frac{4 A \text{EY}}{5 \sqrt{5} L}-\frac{192 \text{EY}
-   \text{IN}}{25 \sqrt{5} L^3} & -\frac{2 A \text{EY}}{5 \sqrt{5} L}-\frac{384
-   \text{EY} \text{IN}}{25 \sqrt{5} L^3} & \frac{48 \text{EY} \text{IN}}{5
-   \sqrt{5} L^2} \\
- \frac{6 \text{EY} \text{IN}}{L^2} & -\frac{6 \text{EY} \text{IN}}{L^2} &
-   \frac{8 \text{EY} \text{IN}}{L} & 0 & -\frac{6 \text{EY} \text{IN}}{L^2} &
-   0 & 0 & \frac{2 \text{EY} \text{IN}}{L} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
- \frac{24 \text{EY} \text{IN}}{5 \sqrt{5} L^2} & \frac{48 \text{EY}
-   \text{IN}}{5 \sqrt{5} L^2} & 0 & \frac{8 \text{EY} \text{IN}}{\sqrt{5} L} &
-   0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -\frac{24 \text{EY} \text{IN}}{5 \sqrt{5}
-   L^2} & -\frac{48 \text{EY} \text{IN}}{5 \sqrt{5} L^2} & \frac{4 \text{EY}
-   \text{IN}}{\sqrt{5} L} \\
- -\frac{12 \text{EY} \text{IN}}{L^3} & 0 & -\frac{6 \text{EY} \text{IN}}{L^2}
-   & 0 & \frac{A \text{EY}}{L}+\frac{12 \text{EY} \text{IN}}{L^3}+\text{Km} &
-   0 & 0 & -\frac{6 \text{EY} \text{IN}}{L^2} & 0 & -\frac{A \text{EY}}{L} & 0
-   & 0 & 0 & 0 & 0 \\
- 0 & -\frac{A \text{EY}}{L} & 0 & 0 & 0 & \frac{A \text{EY}}{L} & 0 & 0 & 0 &
-   0 & 0 & 0 & 0 & 0 & 0 \\
- 0 & 0 & 0 & 0 & 0 & 0 & \frac{12 \text{EY} \text{IN}}{L^3} & 0 & \frac{6
-   \text{EY} \text{IN}}{L^2} & 0 & -\frac{12 \text{EY} \text{IN}}{L^3} &
-   \frac{6 \text{EY} \text{IN}}{L^2} & 0 & 0 & 0 \\
- \frac{6 \text{EY} \text{IN}}{L^2} & 0 & \frac{2 \text{EY} \text{IN}}{L} & 0 &
-   -\frac{6 \text{EY} \text{IN}}{L^2} & 0 & 0 & \frac{4 \text{EY}
-   \text{IN}}{L} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
- 0 & 0 & 0 & 0 & 0 & 0 & \frac{6 \text{EY} \text{IN}}{L^2} & 0 & \frac{4
-   \text{EY} \text{IN}}{L} & 0 & -\frac{6 \text{EY} \text{IN}}{L^2} & \frac{2
-   \text{EY} \text{IN}}{L} & 0 & 0 & 0 \\
- 0 & 0 & 0 & 0 & -\frac{A \text{EY}}{L} & 0 & 0 & 0 & 0 & \frac{A
-   \text{EY}}{L}+\frac{96 \text{EY} \text{IN}}{L^3} & 0 & -\frac{24 \text{EY}
-   \text{IN}}{L^2} & -\frac{96 \text{EY} \text{IN}}{L^3} & 0 & -\frac{24
-   \text{EY} \text{IN}}{L^2} \\
- 0 & 0 & 0 & 0 & 0 & 0 & -\frac{12 \text{EY} \text{IN}}{L^3} & 0 & -\frac{6
-   \text{EY} \text{IN}}{L^2} & 0 & \frac{2 A \text{EY}}{L}+\frac{12 \text{EY}
-   \text{IN}}{L^3} & -\frac{6 \text{EY} \text{IN}}{L^2} & 0 & -\frac{2 A
-   \text{EY}}{L} & 0 \\
- 0 & 0 & 0 & 0 & 0 & 0 & \frac{6 \text{EY} \text{IN}}{L^2} & 0 & \frac{2
-   \text{EY} \text{IN}}{L} & -\frac{24 \text{EY} \text{IN}}{L^2} & -\frac{6
-   \text{EY} \text{IN}}{L^2} & \frac{12 \text{EY} \text{IN}}{L} & \frac{24
-   \text{EY} \text{IN}}{L^2} & 0 & \frac{4 \text{EY} \text{IN}}{L} \\
- -\frac{8 A \text{EY}}{5 \sqrt{5} L}-\frac{96 \text{EY} \text{IN}}{25 \sqrt{5}
-   L^3} & \frac{4 A \text{EY}}{5 \sqrt{5} L}-\frac{192 \text{EY} \text{IN}}{25
-   \sqrt{5} L^3} & 0 & -\frac{24 \text{EY} \text{IN}}{5 \sqrt{5} L^2} & 0 & 0
-   & 0 & 0 & 0 & -\frac{96 \text{EY} \text{IN}}{L^3} & 0 & \frac{24 \text{EY}
-   \text{IN}}{L^2} & \frac{8 A \text{EY}}{5 \sqrt{5} L}+\frac{96 \text{EY}
-   \text{IN}}{25 \sqrt{5} L^3}+\frac{96 \text{EY} \text{IN}}{L^3} & \frac{192
-   \text{EY} \text{IN}}{25 \sqrt{5} L^3}-\frac{4 A \text{EY}}{5 \sqrt{5} L} &
-   \frac{24 \text{EY} \text{IN}}{L^2}-\frac{24 \text{EY} \text{IN}}{5 \sqrt{5}
-   L^2} \\
- \frac{4 A \text{EY}}{5 \sqrt{5} L}-\frac{192 \text{EY} \text{IN}}{25 \sqrt{5}
-   L^3} & -\frac{2 A \text{EY}}{5 \sqrt{5} L}-\frac{384 \text{EY}
-   \text{IN}}{25 \sqrt{5} L^3} & 0 & -\frac{48 \text{EY} \text{IN}}{5 \sqrt{5}
-   L^2} & 0 & 0 & 0 & 0 & 0 & 0 & -\frac{2 A \text{EY}}{L} & 0 & \frac{192
-   \text{EY} \text{IN}}{25 \sqrt{5} L^3}-\frac{4 A \text{EY}}{5 \sqrt{5} L} &
-   \frac{2 A \text{EY}}{5 \sqrt{5} L}+\frac{2 A \text{EY}}{L}+\frac{384
-   \text{EY} \text{IN}}{25 \sqrt{5} L^3} & -\frac{48 \text{EY} \text{IN}}{5
-   \sqrt{5} L^2} \\
- \frac{24 \text{EY} \text{IN}}{5 \sqrt{5} L^2} & \frac{48 \text{EY}
-   \text{IN}}{5 \sqrt{5} L^2} & 0 & \frac{4 \text{EY} \text{IN}}{\sqrt{5} L} &
-   0 & 0 & 0 & 0 & 0 & -\frac{24 \text{EY} \text{IN}}{L^2} & 0 & \frac{4
-   \text{EY} \text{IN}}{L} & \frac{24 \text{EY} \text{IN}}{L^2}-\frac{24
-   \text{EY} \text{IN}}{5 \sqrt{5} L^2} & -\frac{48 \text{EY} \text{IN}}{5
-   \sqrt{5} L^2} & \frac{8 \text{EY} \text{IN}}{\sqrt{5} L}+\frac{8 \text{EY}
-   \text{IN}}{L} \\
-\end{array}
-\right)
+\overline{u}^T = \left[u_1,v_1,\varphi_1,u_2,v_2,\varphi_2,\varphi_2^{EF5},u_3,v_3^{EF2},v_3^{EF3},\varphi_3^{EF2},\varphi_3^{EF3},u_4,v_4,\varphi_4,u_5,v_5,\varphi_5 \right]
 \]
+%
+%Matrici di assemblaggio
+%
+Matrici di assemblaggio
+\begin{align*}
+\mathbf{A_1} &=
+{\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \end{array}
+ \right]
+ }
+\qquad
+ \mathbf{A_2} =
+{\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \end{array}
+ \right]
+ }
+ \\
+ \mathbf{A_3} &=
+{\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+ \end{array}
+ \right]
+ } 
+ \qquad
+ \mathbf{A_4} =
+{\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+ \end{array}
+ \right]
+ }
+\\
+ \mathbf{A_5} &=
+{\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ \end{array}
+ \right]
+ }
+ \end{align*}%
+%
+%Matrici di rotazione
+%
+Matrici di rotazione
+\begin{align*}
+\mathbf{T_1}=\mathbf{T(0)} &=
+{\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccc}
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}
+ \right]
+ }
+\qquad
+\mathbf{T_2}=\mathbf{T(-\pi/2)} =
+{\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccc}
+ 0 & -1 & 0 & 0 & 0 & 0 \\
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & -1 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}
+ \right]
+ }
+ \\
+ \mathbf{T_3}=\mathbf{T(0)} &=
+{\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccc}
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}
+ \right]
+ } 
+ \qquad
+ \mathbf{T_4}=\mathbf{T(\pi/2)} =
+{\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccc}
+ 0 & -1 & 0 & 0 & 0 & 0 \\
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & -1 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}
+ \right]
+ }
+\\
+\mathbf{T_5}=\mathbf{T\Big(\pi/2 + \arctan(2)\Big)} &=
+{\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccc}
+ -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} & 0 & 0 & 0 & 0 \\
+ -\frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}} & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} & 0 \\
+ 0 & 0 & 0 & -\frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{5}} & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{array}
+\right]
+ }
+ \end{align*}
+ %
+%Matrice molla
+%
+\[
+\mathbf{K_{molla}} =
+{\arraycolsep=2pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{cccccccccccccccccc}
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & k & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}
+\right]
+}
+\]
+%
+%Forze nodali
+%
+\[
+\mathbf{R} = \mathbf{R_V} + \mathbf{R_Q} +\mathbf{R_P} +\mathbf{R_T} =
+%
+{\arraycolsep=2pt\medmuskip=0.8mu\footnotesize
+\left[
+\begin{array}{c}
+    H1\\V1\\M1\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0    
+\end{array}\right]
++
+\left[
+\begin{array}{c}
+    0\\0\\0\\0\\0\\0\\0\\0\\0\\\frac{QL}{2}\\0\\\frac{QL^2 }{12}\\0\\\frac{QL}{2}\\-\frac{QL^2}{12}\\0\\0\\0    
+\end{array}\right]
++
+\left[
+\begin{array}{c}
+    0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\F\\0    
+\end{array}\right]
++\left[
+\begin{array}{c}
+    0\\0\\\frac{2 EI\alpha \Delta T}{h}\\0\\0\\-\frac{2EI\alpha \Delta T} {h}\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0   
+\end{array}\right]
+}
+\]
+Infine con la matrice di rigidezza globale totale -- riportata a pagina \pageref{MatriceKtot} --, riducendo le matrice in base ai termini noti e risolvendo il sistema con i valori del problema, si sono ottenuti i risultati riportati in tabella BLA.
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %Matrice globale senza numeri
+\begin{landscape}
+\begin{figure}[htb]
+    \centering
+    {\includegraphics[width=20cm,trim=0 0 23.5cm 0,clip]{rel1/img1/ktot.pdf}}\\  
+    
+    \vspace{1cm}
+    {\includegraphics[width=19cm,trim=23cm 0 0 0,clip]{rel1/img1/ktot.pdf}}
+    \label{MatriceKtot}
+\end{figure}
+\end{landscape}

@@ -1,2 +1,52 @@
 \section{Analisi tramite linea elastica}
-init
+Come già anticipato per calcolare la soluzione analitica è stato utilizzato il metodo della linea elastica tramite l'ausilio del programma Mathematica.
+Dopo aver fissato un sistema di riferimento globale e dei sistemi di riferimento locali per ogni elemento, si è proceduto con la definizione delle equazioni differenziali per ogni elemento. 
+
+La prima equazione differenziale di quarto grado omogenea o non omogenea di ogni elemento definisce la deformazione a flessione, la seconda equazione differenziale del secondo ordine omogenea definisce la deformazione assiale della trave.
+
+{\footnotesize{
+\begin{align*}
+    EI\frac{d^4\,v_1(x)}{d\,x^4} = 0 &\qquad
+    EA\frac{d^2\,u_1(x)}{d\,x^2} = 0 \\
+    EI\frac{d^4\,v_2(x)}{d\,x^4} = 0 &\qquad
+    EA\frac{d^2\,u_2(x)}{d\,x^2} = 0 \\
+    EI\frac{d^4\,v_3(x)}{d\,x^4} = q &\qquad
+    EA\frac{d^2\,u_3(x)}{d\,x^2} = 0 \\
+    EI\frac{d^4\,v_4(x)}{d\,x^4} = 0 &\qquad
+    EA\frac{d^2\,u_4(x)}{d\,x^2} = 0 \\
+    EI\frac{d^4\,v_5(x)}{d\,x^4} = 0 &\qquad
+    EA\frac{d^2\,u_5(x)}{d\,x^2} = 0 
+\end{align*}}}
+In totale perciò si hanno 10 equazioni differenziali per un totale di 30 costanti di integrazione da definire e quindi 30 condizioni al contorno per risolvere il sistema.
+Nella tabella \ref{tab:EqContornoLineaElastica} sono state riportate per ogni nodo le equazioni di congruenza tra gli spostamenti e le equazioni di equilibrio per le sollecitazioni.
+\input{rel1/img1/EqContornoLineaElastica.tex}
+
+Risolvendo il sistema di equazioni sono state trovate le funzioni rispetto $x$ degli spostamenti:
+
+{\footnotesize{
+\begin{align*}
+     u_1(x) &= -2.4087\times10^{-7}x\\
+     v_1(x) &= -0.000415408 x^3 + 0.00131629 x^2 \\
+     u_2(x) &= -0.00063059\\
+     v_2(x) &= -0.00026418 x^3 +0.00237762 x^2-0.00331828 x-7.2234\times10^{-7}\\
+     u_3(x) &= 2.63158 \times10^{-6}x +0.00431015\\
+     v_3(x) &= 0.0000207704 x^4 -00734869x + 0.0379719\\
+     u_4(x) &= -2.25564\times10^{-6} x+0.0176082\\
+     v_4(x) &= 0.000290786 x^3+0.0011216 x^2-0.00510549 x-0.00431804\\
+     u_5(x) &= -4.03501\times10^{-6} x+0.000296188\\
+     v_5(x) &= -0.000241509 x^3+0.00243014 x^2 +0.000222117 x-0.0195347\\
+\end{align*}}}
+A cui poi applicando le formule di legame tra gli sforzi e sostituendo i valori di $x$, si è pervenuti ai valori di spostamento nel nodo richiesto ed ai valori di sforzo per il primo nodo. 
+\begin{align*}
+    M(x) &= -EI \left[v^{\prime\prime}(x) + \chi_{th}\right] \\
+    T(x) &= M^\prime(x) \\
+    N(x) &= EA \, u^\prime (x)
+\end{align*}
+\begin{align*}
+    u_2 &= \SI{-7.22e-7}{\meter}\\
+    v_2 &= \SI{6.31e-4}{\meter}\\
+    M_1 &= \SI{-7361.79}{\newton\meter}\\
+    T_1 &= \SI{1500.00}{\newton}\\
+    N_1 &= \SI{-96.07}{\newton}\\
+\end{align*}
+

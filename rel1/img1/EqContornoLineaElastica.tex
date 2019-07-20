@@ -1,0 +1,32 @@
+\begin{table}[htb]
+\footnotesize
+\caption{Elenco delle condizioni al contorno adottate nei nodi della struttura}
+\label{tab:EqContornoLineaElastica}
+\centering
+\[
+\begin{array}{ccc}
+\toprule	
+\text{Nodo} & \text{Equazioni di congruenza} & \text{Equazioni di equilibrio} \\\midrule
+\multirow{3}{*}{1} & u_1(0)=0 & \\
+ & v_1(0)=0 & \\
+ & v_1^\prime(0)=0 & \\\midrule
+\multirow{5}{*}{2} & u_1\left(L\right)=-u_5\left(\sqrt{\frac{5}{4}}L\right)\frac{2}{\sqrt{5}} - v_5\left(\sqrt{\frac{5}{4}}L\right)\frac{1}{\sqrt{5}} & M_1(L) - M_2(0) =0\\
+ & v_1\left(L\right)=u_5\left(\sqrt{\frac{5}{4}}L\right)\frac{1}{\sqrt{5}} - v_5\left(\sqrt{\frac{5}{4}}L\right)\frac{2}{\sqrt{5}} & N_2(0) - T_1(L) + T_5\left(\sqrt{\frac{5}{4}}L\right)\frac{2}{\sqrt{5}} - N_5\left(\sqrt{\frac{5}{4}}L\right)\frac{1}{\sqrt{5}}=0\\
+ & u_1(L) = v_2(0) & T_2(0) - N_1(L) + N_5\left(\sqrt{\frac{5}{4}}L\right)\frac{2}{\sqrt{5}} + N_5\left(\sqrt{\frac{5}{4}}L\right)\frac{1}{\sqrt{5}}=0\\
+ & v_1(L) = -u_2(0) & M_5\left(\sqrt{\frac{5}{4}}L\right)=0\\
+ & v_1^\prime(L) = v_2^\prime(0) & \\\midrule
+\multirow{5}{*}{3} & v_2(L) = u_3(0) & M_2(L)=0\\
+ & & N_2(L)=0 \\
+ & & M_3(0)=0 \\
+ & & T_3(0)=0 \\
+ & & N_3(0) - T_2(L) = k\, v_2(L)\\\midrule
+\multirow{3}{*}{4} & u_3(L) = -v_4(0) & N_3(0)+T_4\left(\sqrt{\frac{5}{4}}L\right)=0 \\
+ & v_3(L) = u_4(0) & N_4(0)-T_3\left(\sqrt{\frac{5}{4}}L\right)=0 \\
+ & v_3^\prime(L) = v_4^\prime(0) & M_3\left(\sqrt{\frac{5}{4}}L\right)-M_4(0)=0 \\\midrule
+\multirow{3}{*}{5} & v_4(L/2) = u_5(0)\frac{2}{\sqrt{5}} + v_5(0)\frac{1}{\sqrt{5}} & M_4(L/2) - M_5(0)=0\\
+ & u_4(L/2) = u_5(0)\frac{1}{\sqrt{5}} - v_5(0)\frac{2}{\sqrt{5}} & T_4(L/2)-T_5(0)\frac{1}{\sqrt{5}} - N_5(0)\frac{2}{\sqrt{5}}=0\\
+ & v_4^\prime(L/2) = v_5^\prime(0) & N_4(L/2)+T_5(0)\frac{2}{\sqrt{5}}-N_5(0)\frac{1}{\sqrt{5}}-F=0\\
+\bottomrule
+\end{array}
+\]
+\end{table}

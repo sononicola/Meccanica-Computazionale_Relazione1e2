@@ -3,56 +3,55 @@
 \begin{lstlisting} 
 *HEADING
 ESERCITAZIONE DI MECCANICA COMPUTAZIONALE
-Unita' di misura SI (Pa, N, m, ...)
+Unita di misura SI (Pa, N, m, ...)
 1-asse orizzontale, 2-asse verticale
 *PREPRINT, ECHO=YES, MODEL=YES, HISTORY=YES
 
 *NODE, NSET=NALL
 10, 0, 0, 0
 20, 3, 0, 0
-21, 3, 0, 0
 30, 3, 3, 0
 31, 3, 3, 0
 40, 6, 3, 0
 50, 6, 1.5, 0
-*ELEMENT, TYPE=B23, ELSET=alfavero
+*ELEMENT, TYPE=B23, ELSET=alfazero
 2, 20, 30
 3, 31, 40
 4, 40, 50
-5, 50, 21
-*ELEMENT, TYPE=B23, ELSET=alfazero
+5, 50, 20
+*ELEMENT, TYPE=B23, ELSET=alfavero
 1, 10, 20
 *ELEMENT, TYPE=SPRING1, ELSET=MOLLA
 6,30
 *SPRING, ELSET=MOLLA
 1
-100
-*MPC
-PIN, 20, 21
+22289.6
+*RELEASE
+5,S2,ALLM
 *EQUATION 
 2 
 30, 1, 1.0, 31, 1, -1.0
 *INITIAL CONDITIONS, TYPE=TEMPERATURE
 NALL,0
-*BEAM GENERAL SECTION, ELSET=alfazero, SECTION=GENERAL
-0.004656,0.0000292335,0, 0.0000292335,0
-0,0,-1
-200.E9,0.3,0.000012
 *BEAM GENERAL SECTION, ELSET=alfavero, SECTION=GENERAL
-0.004656,0.0000292335,0, 0.0000292335,0
+0.0019,0.0000028658,0, 0.0000028658,0
 0,0,-1
-200.E9,0.3,0
+210000000000,8076923077,0.000012
+*BEAM GENERAL SECTION, ELSET=alfazero, SECTION=GENERAL
+0.0019,0.0000028658,0, 0.0000028658,0
+0,0,-1
+210000000000,8076923077,0
 *STEP, PERTURBATION
 *STATIC
 *BOUNDARY
 10,ENCASTRE
 *CLOAD
-50,2,-2.E3
+50,2,-600
 *DLOAD
-3,PY,-6.E3
+3,P2,-300
 *TEMPERATURE, OP=MOD
-10,0,100,0
-20,0,100,0
+10,0,-800,0
+20,0,-800,0
 *NODE PRINT
 U,
 RF,
@@ -61,3 +60,65 @@ SF,
 SM,
 *END STEP
 \end{lstlisting}
+
+\begin{table}[htb]
+    \centering
+    \caption{sforzi blablsa}
+    \label{tab:SforziAbaqus}
+    \begin{tabular}{c
+                    c
+                    S[table-format=4.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=4.3,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]}
+        \toprule
+    	\text{Elemento}&\text{Nodo} & \multicolumn{1}{c}{SF1} & \multicolumn{1}{c}{SM1}\\
+    	& & \multicolumn{1}{c}{\SI{}{\newton}} & \multicolumn{1}{c}{\SI{}{\newton\meter}}\\
+    	\midrule
+        1 & 10 & -96.07     & 7362.00\\
+        1 & 20 & -96.07     & 2862.00\\
+        2 & 20 & 0.00       & 2862.00\\
+        2 & 30 & 0.00       & -6.992E-12\\
+        3 & 31 & 1050.00    & -225.00\\
+        3 & 40 & 1050.00    & 1125.00\\
+        4 & 40 & -900.00    & 1350.00\\
+        4 & 50 & -900.00    & 2925.00\\
+        5 & 50 & -1610.00   & 2925.00\\
+        5 & 20 & -1610.00   & -5.002E-12\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%Spostamenti
+\begin{table}[htb]
+    \centering
+    \caption{spostamenti abhsajhgsjab}
+    \label{tab:SpostamentiUabaqus}
+    \begin{tabular}{c
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]}  
+        \toprule
+    	\text{Nodo} & \multicolumn{1}{c}{$U_1$} & \multicolumn{1}{c}{$U_2$}& \multicolumn{1}{c}{$UR_3$}\\
+    	& \multicolumn{1}{c}{\SI{}{\meter}} & \multicolumn{1}{c}{\SI{}{\meter}}& \multicolumn{1}{c}{\SI{}{\radian}}\\
+    	\midrule
+        20 & -7.22E-07 & -6.31E-04 & 3.32E-03    \\
+        30 & 4.31E-03  & -6.31E-04 & -3.81E-03   \\
+        31 & 4.31E-03  & -3.80E-02 & 7.35E-03    \\
+        40 & 4.32E-03  & -1.76E-02 & 5.11E-03    \\
+        50 & 8.47E-03  & -1.76E-02 & -2.22E-04   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
