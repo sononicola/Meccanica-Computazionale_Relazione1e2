@@ -60,18 +60,18 @@ SF,
 SM,
 *END STEP
 \end{lstlisting}
-
+%
 \begin{table}[htb]
     \centering
     \caption{sforzi blablsa}
     \label{tab:SforziAbaqus}
     \begin{tabular}{c
                     c
-                    S[table-format=4.2,
+                    S[table-format=-3.3,
                       table-figures-exponent=2,
                       table-sign-mantissa,
                       table-sign-exponent]    
-                    S[table-format=4.3,
+                    S[table-format=-3.3,
                       table-figures-exponent=2,
                       table-sign-mantissa,
                       table-sign-exponent]}
@@ -79,16 +79,16 @@ SM,
     	\text{Elemento}&\text{Nodo} & \multicolumn{1}{c}{SF1} & \multicolumn{1}{c}{SM1}\\
     	& & \multicolumn{1}{c}{\SI{}{\newton}} & \multicolumn{1}{c}{\SI{}{\newton\meter}}\\
     	\midrule
-        1 & 10 & -96.07     & 7362.00\\
-        1 & 20 & -96.07     & 2862.00\\
-        2 & 20 & 0.00       & 2862.00\\
-        2 & 30 & 0.00       & -6.992E-12\\
-        3 & 31 & 1050.00    & -225.00\\
-        3 & 40 & 1050.00    & 1125.00\\
-        4 & 40 & -900.00    & 1350.00\\
-        4 & 50 & -900.00    & 2925.00\\
-        5 & 50 & -1610.00   & 2925.00\\
-        5 & 20 & -1610.00   & -5.002E-12\\
+        1 & 10 & -96.07     & 7.362e3\\
+        1 & 20 & -96.07     & 2.862e3\\
+        2 & 20 & 0.000       & 2.386e3\\
+        2 & 30 & 0.000       & -6.992E-12\\
+        3 & 31 & 1.050e3    & -225.0\\
+        3 & 40 & 1.050e3    & 1.125e3\\
+        4 & 40 & -900.0     & 1.350e3\\
+        4 & 50 & -900.0     & 2.925e3\\
+        5 & 50 & -1.610e3   & 2.925e3\\
+        5 & 20 & -1,610e3   & -5.002E-12\\
         \bottomrule
     \end{tabular}
 \end{table}

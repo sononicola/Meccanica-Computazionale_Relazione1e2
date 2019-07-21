@@ -155,6 +155,7 @@ Matrici di rotazione
  %
 %Matrice molla
 %
+Matrice di rigidezza della molla
 \[
 \mathbf{K_{molla}} =
 {\arraycolsep=2pt\medmuskip=0.8mu\footnotesize
@@ -182,11 +183,12 @@ Matrici di rotazione
 \right]
 }
 \]
+Vettore delle forze nodali
 %
 %Forze nodali
 %
 \[
-\mathbf{R} = \mathbf{R_V} + \mathbf{R_Q} +\mathbf{R_P} +\mathbf{R_T} =
+\overline{R} = \overline{R}_V + \overline{R}_Q +\overline{R}_P +\overline{R}_T =
 %
 {\arraycolsep=2pt\medmuskip=0.8mu\footnotesize
 \left[
@@ -210,7 +212,6 @@ Matrici di rotazione
 }
 \]
 Infine con la matrice di rigidezza globale totale -- riportata a pagina \pageref{MatriceKtot} --, riducendo le matrice in base ai termini noti e risolvendo il sistema con i valori del problema, si sono ottenuti i risultati riportati in tabella BLA.
-
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %Matrice globale senza numeri
 \begin{landscape}
@@ -223,3 +224,17 @@ Infine con la matrice di rigidezza globale totale -- riportata a pagina \pageref
     \label{MatriceKtot}
 \end{figure}
 \end{landscape}
+%Risultati U e RV
+\[
+\overline{u} = \left[
+    \begin{array}{c}
+    0\\0\\0\\\SI{-7.22e-7}{}\\\SI{6.31e-4}{}\\\SI{3.32e-3}{}\\\SI{8.37e-3}{}\\\SI{4.31e-3}{}\\\SI{6.31e-4}{}\\\SI{3.80e-2}{}\\\SI{3.81e-3}{}\\\SI{-7.35e-3}{}\\\SI{4.32e-3}{}\\\SI{1.76e-2}{}\\\SI{-5.11e-3}{}\\\SI{8.47e-3}{}\\\SI{1.76e-2}{}\\\SI{2.22e-4}{}
+    \end{array}
+    \right]
+\qquad    
+\overline{R}_V = \left[
+    \begin{array}{c}
+    96.07\\\SI{-1.500e3}{}\\\SI{-7.362e3}{}\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0 
+    \end{array}
+    \right]
+\]

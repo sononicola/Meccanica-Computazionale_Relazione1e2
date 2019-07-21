@@ -58,7 +58,13 @@ Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seg
 	\end{align*}
 \end{minipage}
 \end{center}
+La verifica è flessione risulta verificata nelle due combinazioni tra sforzo normale e momento peggiori: 
+\begin{align*}
+    \sigma_1 &= \frac{N}{A} + \frac{M_{max}}{W} = \frac{\SI{96.07}{\newton}}{\SI{0.0019}{\metre\squared}} + \frac{\SI{7362}{\newton\metre}}{\SI{5.732e-5}{\metre\cubed}} = \SI{128}{\mega\pascal}< \SI{200}{\mega\pascal}\\
+    \sigma_2 &= \frac{N_{max}}{A} + \frac{M}{W} = \frac{\SI{1610}{\newton}}{\SI{0.0019}{\metre\squared}} + \frac{\SI{2925}{\newton\metre}}{\SI{5.732e-5}{\metre\cubed}} =\SI{51.9}{\mega\pascal} < \SI{200}{\mega\pascal}
+\end{align*}
 %Struttura con i nomi ai punti
+La figura \ref{fig:StrutturaConNomenclatura} mostra la nomenclatura data ai nodi e alle aste. Il sistema di riferimento utilizzato varia in base al metodo utilizzato.
 \input{rel1/img1/StrutturaConNomiPunti}
 %-----
 	%\input{rel1/PLV.tex}
@@ -66,16 +72,64 @@ Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seg
     \input{rel1/MetodoMatriciale.tex}
     \input{rel1/Abaqus1.tex}
 %-----
-\section{Confronto spostamenti in A}
-%tabella equazioni:
-\begin{table}[H]
-\caption{Confronto spostamenti nei nodi}
-\centering
-\begin{tabular}{cSSS}
-	\toprule
-	\textbf{Nodo}&\textbf{PLV} & \textbf{Matriciale} & \textbf{FEM}\\
-	\midrule
-	10 & 1.111& 1.111& 1.111\\	 
-	\bottomrule
-\end{tabular}
+\section{Confronto spostamenti}
+Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa .
+\begin{landscape}
+\begin{table}[htb]
+    \footnotesize
+    \centering
+    \caption{Confronto dei risultati degli spostamenti tra i tre diversi metodi utilizzati. I valori solo da considerarsi riferiti al sistema di riferimento proprio di ciascun metodo}
+    \label{tab:SpostamentiUconfronto}
+    \begin{tabular}{c
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                      S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                      S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]    
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]
+                    S[table-format=1.2,
+                      table-figures-exponent=2,
+                      table-sign-mantissa,
+                      table-sign-exponent]}  
+        \toprule
+        \multirow{3}{*}{Nodo} & \multicolumn{3}{c}{Linea elastica}& \multicolumn{3}{c}{Matriciale}& \multicolumn{3}{c}{Abaqus}\\
+    	& \multicolumn{1}{c}{$U_1$} & \multicolumn{1}{c}{$U_2$}& \multicolumn{1}{c}{$UR_3$}& \multicolumn{1}{c}{$U_1$} & \multicolumn{1}{c}{$U_2$}& \multicolumn{1}{c}{$UR_3$}& \multicolumn{1}{c}{$U_1$} & \multicolumn{1}{c}{$U_2$}& \multicolumn{1}{c}{$UR_3$}\\
+    	& \multicolumn{1}{c}{\SI{}{\meter}} & \multicolumn{1}{c}{\SI{}{\meter}}& \multicolumn{1}{c}{\SI{}{\radian}}&
+    	\multicolumn{1}{c}{\SI{}{\meter}} & \multicolumn{1}{c}{\SI{}{\meter}}& \multicolumn{1}{c}{\SI{}{\radian}}&
+    	\multicolumn{1}{c}{\SI{}{\meter}} & \multicolumn{1}{c}{\SI{}{\meter}}& \multicolumn{1}{c}{\SI{}{\radian}}\\
+    	\midrule
+			2 	&-7.22E-07&6.31E-04&		&-7.22E-07 	&  6.31E-04 & 3.32E-03 	&-7.22E-07 & -6.31E-04 & 3.32E-03 \\
+        $3_{sx}$&  &  &  					&4.31E-03  	&  6.31E-04 & 3.80E-03	&4.31E-03  & -6.31E-04 & -3.81E-03\\
+        $3_{dx}$&  &  &  					&  			&  3.81E-02 & -7.35E-03	&4.31E-03  & -3.80E-02 & 7.35E-03 \\
+       		 4 	&  &  &  					&4.32E-03  	&  1.76E-02 & -5.11E-03	&4.32E-03  & -1.76E-02 & 5.11E-03 \\
+       		 5 	&  &  & 					&8.47E-03  	&  1.76E-02 &  2.22E-04	&8.47E-03  & -1.76E-02 & -2.22E-04\\
+        \bottomrule
+    \end{tabular}
 \end{table}
+\end{landscape}
