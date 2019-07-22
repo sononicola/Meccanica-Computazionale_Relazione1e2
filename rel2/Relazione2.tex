@@ -48,7 +48,7 @@ In questa esercitazione cercheremo di verificare la seguente affermazione utiliz
 Si farà ora una carrellata delle fasi operative avvenute in Abaqus. Successivamente si riporteranno i risultati ottenuti e i relativi confronti.
 \begin{enumerate}
     \item Creazione della parte del modello 2D di tipo \emph{Deformable} e \emph{Shell} con una grandezza approssimativa pari a \SI{2500}{}
-    \item Creazione del materiale con le caratteristiche di un acciaio con modulo elastico $E$ pari a \SI{210000}{\mega\pascal} e con modulo di Poisson $\nu$ di \SI{0.3}{}
+    \item Creazione del materiale con le caratteristiche di un acciaio avente modulo elastico $E$ pari a \SI{210000}{\mega\pascal} e modulo di Poisson $\nu$ di \SI{0.3}{}
     \item Assegnazione del materiale creato alla sezione della lastra con dimensione di \SI{5}{\milli\metre} e di tipo omogeneo
     \item Dopo la creazione di un nuovo step e di una nuova partizione, assegnazione delle le condizioni al cortorno. Esse consistono in una cerniera nell'estremità a sinistra e in un carrello in quella a destra
     \item Assegnazione del carico distribuito a trazione con intensità di \SI{30}{\mega\pascal}. Si veda a tal proposito la figura \ref{fig:LastraCaricata}
@@ -74,17 +74,17 @@ La mesh è stata creata di grandi dimensioni in modo tale da avere uno sforzo co
 
 Il penultimo passaggio è stato fatto con varie distanze tra i nodi, in maniera via via più fitta come da figura \ref{fig:Mesh}. Le quattro distanze sono rispettivamente $70$, $25$,$10$ e \SI{5}{\milli\metre}.
 
-In figura \ref{fig:Deformate} a pagina \pageref{fig:Deformate} si possono notare le deformate della zona centrale di maggior interessa della lastra e con riferimento agli sforzi in direzione S11. 
+In figura \ref{fig:Deformate} a pagina \pageref{fig:Deformate} si possono notare le deformate della zona centrale di maggior interesse della lastra e con riferimento agli sforzi in direzione S11. 
 \e poi possibile vedere in figura \ref{fig:DeformataIndeformata} la sovrapposizione tra deformata e indeformata.
 
-Nei grafici di pagina \pageref{fig:GraficoMesh1} sono riportati gli sforzi in funzione della posizione nella lastra, con i rispettivi valori. 
+Nei grafici di pagina \pageref{fig:Grafici} sono riportati gli sforzi in funzione della posizione nella lastra, con i rispettivi valori. 
 \e inoltre presente una sovrapposizione degli stessi.
 Nel grafico \ref{fig:GraficoMesh1} è particolarmente evidente il salto tra soluzione mediata e non. 
 Si può notare come man mano si infittisca la mesh la soluzione non mediata tenda a coincidere con la soluzione mediata.
 
 Si nota inoltre come i valori di $\sigma _{max}$ siano molti più elevati ai bordi e più contenuti man mano che ci si avvicina al centro della lastra. 
 
-Infine nel grafico di pagina \pageref{GraficoConfrontocps8} è riportato il confronto tra la soluzione analitica calcolata secondo le \eqref{kt1}.
+Infine nel grafico di pagina \pageref{GraficoConfronto} è riportato il confronto tra la soluzione analitica calcolata secondo le \eqref{kt1}.
 Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre prove con diverse distanze tra i nodi, di cui però non si riporteranno altre rappresentazioni delle mesh o delle deformate.
 %I vari tipi di CPS
 \begin{figure}[htp]
@@ -142,12 +142,12 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 Calcolando la percentuale di errore tra la soluzione analitica trovata in letteratura e la soluzione calcolata con gli elementi finiti si può constatare come con una mesh abbastanza fitta l’errore sia effettivamente sotto il 5\%, a tal punto da essere quasi coincidenti.
 Infatti si ha
 \begin{gather*}
-    \sigma_{let.} = \SI{105.323}{} \pm \SI{5}{\%} = \SI{105.323}{} \pm \SI{5.266}{\mega\pascal} \\
+    \sigma_{LET.} = \SI{105.323}{} \pm \SI{5}{\%} = \SI{105.323}{} \pm \SI{5.266}{\mega\pascal} \\
     100.057 < \sigma_{FEM} < \SI{110.589}{\mega\pascal}
 \end{gather*}
 
 Per testare la rapidità di convergenza dei diversi tipi di elementi sono stati fatti altri calcoli utilizzando \emph{CPS6} e \emph{CPS4}. 
-Negli ultimi due grafici di pagina \pageref{GraficoConfrontocps6} si nota chiaramente quanto più si riduca la distanza dei Seed, più la soluzione converga diversamente tra i diversi elementi. 
+Negli ultimi due grafici di pagina \pageref{GraficoConfronto} si nota chiaramente quanto più si riduca la distanza dei Seed, più la soluzione converga diversamente tra i diversi elementi. 
 Nel terzo è evidente come sia più lento a farlo.
 Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo funzioni di forma quadratiche, ma lineari hanno meno accuratezza rispetto gli altri due.
 %
@@ -165,9 +165,9 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
 \begin{figure}
 \ContinuedFloat %per spezzare la pagina con due subfloat uniti
 \centering
-\subfloat[][\emph{Mesh 4: ymin = \SI{38.516}{\mega\pascal}, ymax = \SI{105.600}{\mega\pascal}, Viola = mediata 75\%, Blu = non mediata\label{fig:GraficoMEsh4}}]
+\subfloat[][\emph{Mesh 4: ymin = \SI{38.516}{\mega\pascal}, ymax = \SI{105.600}{\mega\pascal}, Viola = mediata 75\%, Blu = non mediata\label{fig:GraficoMesh4}}]
 {\includegraphics[width=\textwidth,trim=0 1.9cm 0 0,clip]{rel2/img2/GraficoMesh5.pdf}} \\
-\subfloat[][\emph{Mesh unite con soluzione mediata 75\%\label{fig:GraficoMeshUnite}}]
+\subfloat[][\emph{Mesh unite con soluzione mediata 75\% \label{fig:GraficoMeshUnite}}]
 {\includegraphics[width=\textwidth,trim=0 1.4cm 0 0,clip]{rel2/img2/GraficoMeshUnite.pdf}} \\
 \subfloat[][\emph{Path costante con soluzione mediata 75\% \label{fig:GraficoMeshPathCostante}}]
 {\includegraphics[width=\textwidth,trim=0 0.6cm 0 3cm,clip]{rel2/img2/GraficoPathCostante.pdf}}
@@ -177,6 +177,8 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
 %\end{landscape}
 
 \clearpage
+\phantomsection
+\label{GraficoConfronto}
 %Grafico confronto soluzione analitica con fem CPS8
 \begin{center}
 \label{GraficoConfrontocps8}
@@ -260,7 +262,6 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
 
 \vspace{1cm}
 %Grafico confronto soluzione analitica con fem CPS4
-\label{GraficoConfrontocps4}
 \begin{tikzpicture}\centering
 	\begin{axis}[
 	    height=6.5cm,
@@ -298,5 +299,6 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
 	};
 	\end{axis}
 \end{tikzpicture}
+\label{GraficoConfrontocps4}
 \end{center}
 
