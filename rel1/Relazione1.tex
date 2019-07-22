@@ -31,6 +31,7 @@ Il problema riguarda la risoluzione di una struttura iperstatica (riportata in f
 	\bottomrule
 \end{tabular}
 \end{table}
+
 I valori di $q$, $F$, $k$ e $\Delta T$ sono stati assegnati in modo tale che gli effetti  tensionali di ciascuno di essi fosse confrontabile con quello degli altri. 
 Dopo varie prove riportate in tabella \ref{tab:confrontoSingoliCarichi} si sono ottenuti i seguenti valori, con i quali si sono eseguiti tutti i successivi calcoli:
 \begin{align*}
@@ -39,11 +40,11 @@ Dopo varie prove riportate in tabella \ref{tab:confrontoSingoliCarichi} si sono 
 	k &= \SI{22289.6}{\newton \per \metre}\\
 	\Delta T &= \SI{40}{\celsius}
 \end{align*}
-La sezione delle travi è stata scelta facendo attenzione ad avere una trave snella ovvero avendo una lunghezza pari a $10$ volte lo spessore medio e rispettando la verifica a presso-flessione in campo elastico 
+La sezione delle travi in acciaio è stata scelta facendo attenzione ad avere una trave snella ovvero avendo una lunghezza pari a $10$ volte lo spessore medio e rispettando la verifica a presso-flessione in campo elastico 
 \[
 \frac{N}{A} + \frac{M}{W} < \SI{200}{\mega\pascal}
 \]
-Portando, dopo varie iterazioni, ad avere dei tubi a sezione quadrata con le seguenti caratteristiche:
+portando ad avere, dopo varie iterazioni, dei tubi in acciaio a sezione quadrata con le seguenti caratteristiche:
 \begin{center}
 \begin{minipage}{6cm}
 	\includegraphics[width=60mm]{rel1/img1/tubi-quadri.pdf}
@@ -64,7 +65,10 @@ La verifica è flessione risulta verificata nelle due combinazioni tra sforzo no
     \sigma_2 &= \frac{N_{max}}{A} + \frac{M}{W} = \frac{\SI{1610}{\newton}}{\SI{0.0019}{\metre\squared}} + \frac{\SI{2925}{\newton\metre}}{\SI{5.732e-5}{\metre\cubed}} =\SI{51.9}{\mega\pascal} < \SI{200}{\mega\pascal}
 \end{align*}
 %Struttura con i nomi ai punti
-La figura \ref{fig:StrutturaConNomenclatura} mostra la nomenclatura data ai nodi e alle aste. Il sistema di riferimento utilizzato varia in base al metodo utilizzato.
+La figura \ref{fig:StrutturaConNomenclatura} a pagina \pageref{fig:StrutturaConNomenclatura} mostra la nomenclatura data ai nodi e alle aste. Il sistema di riferimento utilizzato varia in base al metodo utilizzato.
+
+Si elencheranno ora le tre diverse tipologie di risoluzione del problema spiegando sinteticamente i passaggi effettuati. 
+Infine nel paragrafo \label{cap:cap4} è presente un confronto dei risultati ottenuti con i diversi metodi.
 \input{rel1/img1/StrutturaConNomiPunti}
 %-----
 	%\input{rel1/PLV.tex}
@@ -72,8 +76,9 @@ La figura \ref{fig:StrutturaConNomenclatura} mostra la nomenclatura data ai nodi
     \input{rel1/MetodoMatriciale.tex}
     \input{rel1/Abaqus1.tex}
 %-----
+\pagebreak
 \section{Confronto spostamenti}
-Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa Scrivere qualcosa .
+Come si osserva dalla tabella \ref{tab:SpostamentiUconfronto} a parità di cifre significative, si hanno tutto sommato gli stessi valori per tutti i metodi utilizzati.
 \begin{landscape}
 \begin{table}[htb]
     \footnotesize

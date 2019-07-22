@@ -1,11 +1,12 @@
 \section{Analisi tramite calcolo matriciale}
+Come prima operazione è stato definito il vettore degli spostamenti:
 \[
 \overline{u}^T = \left[u_1,v_1,\varphi_1,u_2,v_2,\varphi_2,\varphi_2^{EF5},u_3,v_3^{EF2},v_3^{EF3},\varphi_3^{EF2},\varphi_3^{EF3},u_4,v_4,\varphi_4,u_5,v_5,\varphi_5 \right]
 \]
+Si sono quindi definite le matrici di assemblaggio e di rotazione per ciascun elemento.
 %
 %Matrici di assemblaggio
 %
-Matrici di assemblaggio
 \begin{align*}
 \mathbf{A_1} &=
 {\arraycolsep=1pt\medmuskip=0.8mu\footnotesize
@@ -80,7 +81,6 @@ Matrici di assemblaggio
 %
 %Matrici di rotazione
 %
-Matrici di rotazione
 \begin{align*}
 \mathbf{T_1}=\mathbf{T(0)} &=
 {\arraycolsep=3pt\medmuskip=0.8mu\footnotesize
@@ -152,10 +152,10 @@ Matrici di rotazione
 \right]
  }
  \end{align*}
+ Sono state poi definite la matrice di rigidezza della molla e il vettore dei carichi nodali.
  %
 %Matrice molla
 %
-Matrice di rigidezza della molla
 \[
 \mathbf{K_{molla}} =
 {\arraycolsep=2pt\medmuskip=0.8mu\footnotesize
@@ -183,7 +183,6 @@ Matrice di rigidezza della molla
 \right]
 }
 \]
-Vettore delle forze nodali
 %
 %Forze nodali
 %
@@ -211,7 +210,8 @@ Vettore delle forze nodali
 \end{array}\right]
 }
 \]
-Infine con la matrice di rigidezza globale totale -- riportata a pagina \pageref{MatriceKtot} --, riducendo le matrice in base ai termini noti e risolvendo il sistema con i valori del problema, si sono ottenuti i risultati riportati in tabella BLA.
+Infine si è calcolata la matrice di rigidezza globale totale -- riportata a pagina \pageref{MatriceKtot} --  riducendola poi in base ai termini noti delle reazioni vincolari. 
+Risolvendo il sistema e sostituendo i valori del problema, si sono ottenuti i risultati riportati nei vettori $\overline{u}$ e $\overline{R}_V$ a pagina \pageref{vet:UeRV}. 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %Matrice globale senza numeri
 \begin{landscape}
@@ -226,6 +226,7 @@ Infine con la matrice di rigidezza globale totale -- riportata a pagina \pageref
 \end{landscape}
 %Risultati U e RV
 \[
+\label{vet:UeRV}
 \overline{u} = \left[
     \begin{array}{c}
     0\\0\\0\\\SI{-7.22e-7}{}\\\SI{6.31e-4}{}\\\SI{3.32e-3}{}\\\SI{8.37e-3}{}\\\SI{4.31e-3}{}\\\SI{6.31e-4}{}\\\SI{3.80e-2}{}\\\SI{3.81e-3}{}\\\SI{-7.35e-3}{}\\\SI{4.32e-3}{}\\\SI{1.76e-2}{}\\\SI{-5.11e-3}{}\\\SI{8.47e-3}{}\\\SI{1.76e-2}{}\\\SI{2.22e-4}{}

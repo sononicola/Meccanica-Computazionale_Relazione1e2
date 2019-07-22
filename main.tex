@@ -7,9 +7,10 @@ left=2.5cm,right=2.5cm,heightrounded,bindingoffset=0mm}
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{amsmath,amsfonts,amssymb,braket,mathrsfs}
-%\usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{float}
 \usepackage{tabularx,booktabs}
+\usepackage{hyperref}
+\usepackage{epsfig}
 %\usepackage{minipage}
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage{tikz}
@@ -48,6 +49,23 @@ numberstyle=\tiny,}
 \usepackage{lscape}
 \usepackage{multirow}
 \begin{document}
+\input{Titolo.tex}
+\tableofcontents
+%\setcounter{page}{1}
+%Tabelle e figure sulla stessa pagina:
+%Le aggiunge all'indice. phantomsection serve per non far casini con hyperref
+\clearpage
+\begingroup
+   %\let\cleardoublepage\relax  % book
+    \let\clearpage\relax        % report
+        \listoftables
+        \phantomsection
+        \addcontentsline{toc}{chapter}{Elenco delle tabelle}
+        %
+        \listoffigures
+        \phantomsection
+        \addcontentsline{toc}{chapter}{Elenco delle figure}
+\endgroup
     \input{rel1/Relazione1.tex}
 	\input{rel2/Relazione2.tex}    
 \end{document}

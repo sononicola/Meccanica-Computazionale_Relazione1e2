@@ -1,4 +1,10 @@
 \section{Analisi tramite FEM}
+Per la risoluzione con questa metodologia è stato utilizzato il software Abaqus. 
+Sono stati scelti degli elementi finiti di tipo $B23$ ovvero elementi alla Eulero-Bernoulli specifici per travi snelle e aventi solamente deformazione assiale e a flessione.
+
+Il nodo $3$ è stato scomposto in due diversi nodi sovrapposti $30$ e $31$, a cui tramite la keyword \lstinline{*EQUATION} è stato imposto che lo spostamento orizzontale nel riferimento globale sia uguale per le due aste.
+
+Si riporta ora l'input utilizzato, mentre nelle tabella \ref{tab:SforziAbaqus} e \ref{tab:SpostamentiUabaqus} sono riportati gli sforzi e gli spostamenti ottenuti.
 %Input abaqus
 \begin{lstlisting} 
 *HEADING
