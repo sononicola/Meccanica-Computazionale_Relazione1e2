@@ -39,7 +39,7 @@ K_{tu}=2.10647\\
 K_{t\theta}=2.17727
 \end{cases} \implies K_t = K_{tu}
 \]
-Scegliendo uno sforzo $\sigma_1$ di \SI{50}{\mega\pascal} otteniamo uno sforzo $\sigma_{max}$ pari a \SI{105.323}{\mega\pascal}.
+Scegliendo uno sforzo $\sigma_1$ di \SI{30}{\mega\pascal} otteniamo uno sforzo $\sigma_{max}$ pari a \SI{105.323}{\mega\pascal}.
 
 La soluzione analitica si dice essere approssimata con un errore massimo del \SI{5}{\%} dalla soluzione reale. 
 In questa esercitazione cercheremo di verificare la seguente affermazione utilizzando il programma Abaqus per calcolare la soluzione con gli elementi finiti.
@@ -66,15 +66,23 @@ Si farà ora una carrellata delle fasi operative avvenute in Abaqus. Successivam
         \label{fig:Partizioni}
     \end{figure}
     \item Assegnazione iniziale della grandezza dei nodi che compongono la mesh pari a \SI{100}{}
-    \item Specificazione delle forma degli elementi della mesh come tipo \emph{Quad} (Q8) e della tipologie delle funzioni di forma di tipo \emph{Quadratic} senza riduzione di integrazione e adatte al \emph{Plane Stress}. Ovvero la prima della figura \ref{fig:cps}.
+    \item Specificazione delle forma degli elementi della mesh come tipo \emph{Quad} (Q8) e della tipologie delle funzioni di forma di tipo \emph{Quadratic} senza riduzione di integrazione e adatte al \emph{Plane Stress}. Ovvero quello in figura \ref{fig:cps8}
     \item Calcolo dei risultati
 \end{enumerate}
-Il penultimo passaggio è stato fatto con varie distanze tra i nodi, in maniera via via più fitta come da figura \ref{fig:Mesh}. Le quattro distanze sono rispettivamente $70$, $25$,$10$ e $5$.
+La mesh è stata creata di grandi dimensioni in modo tale da avere uno sforzo costante in una sezione a metà dell’asse dell’intaglio e il bordo della lastra.
+\e stato scelto l'elemento quadratico \emph{CPS8} in quanto la teoria dice che tende a converge più velocemente rispetto gli altri di figura \ref{fig:cps}.
+
+Il penultimo passaggio è stato fatto con varie distanze tra i nodi, in maniera via via più fitta come da figura \ref{fig:Mesh}. Le quattro distanze sono rispettivamente $70$, $25$,$10$ e \SI{5}{\milli\metre}.
 
 In figura \ref{fig:Deformate} a pagina \pageref{fig:Deformate} si possono notare le deformate della zona centrale di maggior interessa della lastra e con riferimento agli sforzi in direzione S11. 
-\e poi possibile vedere in figura {fig:DeformataConfronto} la sovrapposizione tra deformata e indeformata.
+\e poi possibile vedere in figura \ref{fig:DeformataIndeformata} la sovrapposizione tra deformata e indeformata.
 
-Nei grafici di pagina \pageref{fig:GraficoMesh1} sono riportati gli sforzi in funzione della posizione nella lastra. \e inoltre presente una sovrapposizione degli stessi.
+Nei grafici di pagina \pageref{fig:GraficoMesh1} sono riportati gli sforzi in funzione della posizione nella lastra, con i rispettivi valori. 
+\e inoltre presente una sovrapposizione degli stessi.
+Nel grafico \ref{fig:GraficoMesh1} è particolarmente evidente il salto tra soluzione mediata e non. 
+Si può notare come man mano si infittisca la mesh la soluzione non mediata tenda a coincidere con la soluzione mediata.
+
+Si nota inoltre come i valori di $\sigma _{max}$ siano molti più elevati ai bordi e più contenuti man mano che ci si avvicina al centro della lastra. 
 
 Infine nel grafico di pagina \pageref{GraficoConfrontocps8} è riportato il confronto tra la soluzione analitica calcolata secondo le \eqref{kt1}.
 Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre prove con diverse distanze tra i nodi, di cui però non si riporteranno altre rappresentazioni delle mesh o delle deformate.
@@ -95,15 +103,15 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 \begin{landscape}
 \begin{figure}[htp]
 \centering
-\subfloat[][\emph{Mesh 1 \label{fig:Mesh1: 70 }}]
+\subfloat[][\emph{Mesh 1 \label{fig:Mesh1:70}}]
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Mesh70PC.pdf}} %
-\subfloat[][\emph{Mesh 2 \label{fig:Mesh2: 25}}]
+\subfloat[][\emph{Mesh 2 \label{fig:Mesh2:25}}]
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Mesh25PC.pdf}} \\
-\subfloat[][\emph{Mesh 3 \label{fig:Mesh3: 10}}]
+\subfloat[][\emph{Mesh 3 \label{fig:Mesh3:10}}]
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Mesh10PC.pdf}} %
-\subfloat[][\emph{Mesh 4 \label{fig:MEsh4: 5}}]
+\subfloat[][\emph{Mesh 4 \label{fig:MEsh4:5}}]
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Mesh5PC.pdf}}
-\caption{Elenco delle mesh utilizzate con distanze tra i nodi man mano più fitte. Rispettivamente $70$, $25$,$10$ e $5$}
+\caption[Elenco delle mesh utilizzate con distanze tra i nodi man mano più fitte]{Elenco delle mesh utilizzate con distanze tra i nodi man mano più fitte. Rispettivamente $70$, $25$,$10$ e \SI{5}{\milli\metre}}
 \label{fig:Mesh}
 \end{figure}
 \end{landscape}
@@ -120,34 +128,55 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Deformata10.pdf}} %
 \subfloat[][\emph{Mesh 4 \label{fig:DefMEsh4}}]
 {\includegraphics[width=0.7\textwidth]{rel2/img2/Deformata5.pdf}}
-\caption{Deformate per tutte le quattro mesh utilizzate. Scala grafica: rosso = \SI{105}{\mega\pascal}, verde = \SI{50}{\mega\pascal}, blu = \SI{-2.6}{\mega\pascal}}
+\caption[Deformate per ogni mesh utilizzata]{Deformate per tutte le quattro mesh utilizzate. Scala grafica: rosso = \SI{105}{\mega\pascal}, verde = \SI{50}{\mega\pascal}, blu = \SI{-2.6}{\mega\pascal}}
 \label{fig:Deformate}
 \end{figure}
 \end{landscape}
-%Grafici
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{rel2/img2/DeformataIndeformata.pdf}
+    \caption{Confronto tra la deformata e l'indeformata}
+    \label{fig:DeformataIndeformata}
+\end{figure}
+\section{Conclusioni e approfondimenti}
+Calcolando la percentuale di errore tra la soluzione analitica trovata in letteratura e la soluzione calcolata con gli elementi finiti si può constatare come con una mesh abbastanza fitta l’errore sia effettivamente sotto il 5\%, a tal punto da essere quasi coincidenti.
+Infatti si ha
+\begin{gather*}
+    \sigma_{let.} = \SI{105.323}{} \pm \SI{5}{\%} = \SI{105.323}{} \pm \SI{5.266}{\mega\pascal} \\
+    100.057 < \sigma_{FEM} < \SI{110.589}{\mega\pascal}
+\end{gather*}
+
+Per testare la rapidità di convergenza dei diversi tipi di elementi sono stati fatti altri calcoli utilizzando \emph{CPS6} e \emph{CPS4}. 
+Negli ultimi due grafici di pagina \pageref{GraficoConfrontocps6} si nota chiaramente quanto più si riduca la distanza dei Seed, più la soluzione converga diversamente tra i diversi elementi. 
+Nel terzo è evidente come sia più lento a farlo.
+Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo funzioni di forma quadratiche, ma lineari hanno meno accuratezza rispetto gli altri due.
+%
+%Grafici andamento degli sforzi
 %\begin{landscape}
-\begin{figure}[htbp]
+\begin{figure}[p]
 \centering
-\subfloat[][\emph{Mesh 1: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal}\label{fig:GraficoMesh1}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh70.pdf}} \\
-\subfloat[][\emph{Mesh 2: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal} \label{fig:GraficoMesh2}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh25.pdf}} \\
-\subfloat[][\emph{Mesh 3: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal} \label{fig:GraficoMesh3}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh10.pdf}}
+\subfloat[][\emph{Mesh 1: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal}, Verde = mediata 75\%, Viola = non mediata\label{fig:GraficoMesh1}}]
+{\includegraphics[width=\textwidth,trim=0 1.9cm 0 0,clip]{rel2/img2/GraficoMesh70.pdf}} \\
+\subfloat[][\emph{Mesh 2: ymin = \SI{38.264}{\mega\pascal}, ymax = \SI{105.651}{\mega\pascal}, Rosa = mediata 75\%, Viola = non mediata\label{fig:GraficoMesh2}}]
+{\includegraphics[width=\textwidth,trim=0 1.9cm 0 0,clip]{rel2/img2/GraficoMesh25.pdf}} \\
+\subfloat[][\emph{Mesh 3: ymin = \SI{38.487}{\mega\pascal}, ymax = \SI{105.627}{\mega\pascal}, Viola = mediata 75\%, Verde = non mediata\label{fig:GraficoMesh3}}]
+{\includegraphics[width=\textwidth,trim=0 1.9cm 0 0,clip]{rel2/img2/GraficoMesh10.pdf}}
 \end{figure}
 \begin{figure}
-\ContinuedFloat
+\ContinuedFloat %per spezzare la pagina con due subfloat uniti
 \centering
-\subfloat[][\emph{Mesh 4: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal} \label{fig:GraficoMEsh4}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh5.pdf}} \\
-\subfloat[][\emph{Mesh unite: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal} \label{fig:GraficoMesh5}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh10.pdf}} \\
-\subfloat[][\emph{soluzione analitica: ymin = \SI{38.157}{\mega\pascal}, ymax = \SI{105.055}{\mega\pascal} \label{fig:GraficoMEsh6}}]
-{\includegraphics[width=0.6\textwidth]{rel2/img2/GraficoMesh5.pdf}}
-\caption{Deformate per tutte le quattro mesh utilizzate} \label{fig:Grafici}
+\subfloat[][\emph{Mesh 4: ymin = \SI{38.516}{\mega\pascal}, ymax = \SI{105.600}{\mega\pascal}, Viola = mediata 75\%, Blu = non mediata\label{fig:GraficoMEsh4}}]
+{\includegraphics[width=\textwidth,trim=0 1.9cm 0 0,clip]{rel2/img2/GraficoMesh5.pdf}} \\
+\subfloat[][\emph{Mesh unite con soluzione mediata 75\%\label{fig:GraficoMeshUnite}}]
+{\includegraphics[width=\textwidth,trim=0 1.4cm 0 0,clip]{rel2/img2/GraficoMeshUnite.pdf}} \\
+\subfloat[][\emph{Path costante con soluzione mediata 75\% \label{fig:GraficoMeshPathCostante}}]
+{\includegraphics[width=\textwidth,trim=0 0.6cm 0 3cm,clip]{rel2/img2/GraficoPathCostante.pdf}}
+\caption{Andamento degli sforzi in funzione della posizione all'interno della lastra} 
+\label{fig:Grafici}
 \end{figure}
 %\end{landscape}
 
+\clearpage
 %Grafico confronto soluzione analitica con fem CPS8
 \begin{center}
 \label{GraficoConfrontocps8}
@@ -270,3 +299,4 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 	\end{axis}
 \end{tikzpicture}
 \end{center}
+
