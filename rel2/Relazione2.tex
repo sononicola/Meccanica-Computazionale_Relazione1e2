@@ -89,12 +89,12 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 %I vari tipi di CPS
 \begin{figure}[htp]
 \centering
-\subfloat[][\emph{\label{fig:cps8}}]
-{\includegraphics[width=0.3\textwidth]{rel2/img2/CPS8.PNG}} %
-\subfloat[][\emph{\label{fig:cps6}}]
-{\includegraphics[width=0.3\textwidth]{rel2/img2/CPS6.png}} %
-\subfloat[][\emph{\label{fig:cps4}}]
-{\includegraphics[width=0.3\textwidth]{rel2/img2/CPS4.PNG}} %
+\subfloat[][\emph{CPS8: EF quadrangolari serendipity a 8 nodi (Q8) \label{fig:cps8}}]
+{\includegraphics[width=0.3\textwidth,trim=0 2cm 0 0 ,clip]{rel2/img2/CPS8.PNG}} \qquad %
+\subfloat[][\emph{CPS6: EF triangolari quadratici a 6 nodi (LST)\label{fig:cps6}}]
+{\includegraphics[width=0.3\textwidth,trim=0 1cm 0 0 ,clip]{rel2/img2/CPS6.png}} \qquad %
+\subfloat[][\emph{CPS4: EF quadrangolari bilineari a 4 nodi (Q4)\label{fig:cps4}}]
+{\includegraphics[width=0.3\textwidth,trim=0 2.2cm 0 0 ,clip]{rel2/img2/CPS4.PNG}} %
 \caption{Le diverse tipologie di elementi finiti utilizzate}
 \label{fig:cps}
 \end{figure}
@@ -142,7 +142,7 @@ Per maggior maggior infittimento di quest'ultimo grafico sono state fatte altre 
 Calcolando la percentuale di errore tra la soluzione analitica trovata in letteratura e la soluzione calcolata con gli elementi finiti si può constatare come con una mesh abbastanza fitta l’errore sia effettivamente sotto il 5\%, a tal punto da essere quasi coincidenti.
 Infatti si ha
 \begin{gather*}
-    \sigma_{LET.} = \SI{105.323}{} \pm \SI{5}{\%} = \SI{105.323}{} \pm \SI{5.266}{\mega\pascal} \\
+    \sigma_{LET.} = \SI{105.323}{\mega\pascal} \pm \SI{5}{\%} = \SI{105.323}{} \pm \SI{5.266}{\mega\pascal} \\
     100.057 < \sigma_{FEM} < \SI{110.589}{\mega\pascal}
 \end{gather*}
 
@@ -175,7 +175,6 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
 \label{fig:Grafici}
 \end{figure}
 %\end{landscape}
-
 \clearpage
 \phantomsection
 \label{GraficoConfronto}
@@ -243,7 +242,6 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
         (25 ,107.647)
         (20 ,103.442)
         (10 ,104.638)
-
 	};
 	\addplot[color=blue,mark=*] coordinates {
 	   (100,105.323)
@@ -283,7 +281,6 @@ Questo avviene perché gli elementi \emph{CPS4} avendo quattro nodi e non avendo
         (20 ,103.456)
         (10 ,107.206)
         (5  ,107.2  )
-
 	};
 	\addplot[color=blue,mark=*] coordinates {
 	   (100,105.323)
