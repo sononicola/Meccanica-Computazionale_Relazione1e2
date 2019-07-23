@@ -59,7 +59,7 @@ portando ad avere, dopo varie iterazioni, dei tubi in acciaio a sezione quadrata
 	\end{align*}
 \end{minipage}
 \end{center}
-La verifica è flessione risulta verificata nelle due combinazioni tra sforzo normale e momento peggiori: 
+La verifica risulta pertanto verificata nelle due combinazioni tra sforzo normale e momento peggiori: 
 \begin{align*}
     \sigma_1 &= \frac{N}{A} + \frac{M_{max}}{W} = \frac{\SI{96.07}{\newton}}{\SI{0.0019}{\metre\squared}} + \frac{\SI{7362}{\newton\metre}}{\SI{5.732e-5}{\metre\cubed}} = \SI{128}{\mega\pascal}< \SI{200}{\mega\pascal}\\
     \sigma_2 &= \frac{N_{max}}{A} + \frac{M}{W} = \frac{\SI{1610}{\newton}}{\SI{0.0019}{\metre\squared}} + \frac{\SI{2925}{\newton\metre}}{\SI{5.732e-5}{\metre\cubed}} =\SI{51.9}{\mega\pascal} < \SI{200}{\mega\pascal}
@@ -68,6 +68,7 @@ La verifica è flessione risulta verificata nelle due combinazioni tra sforzo no
 La figura \ref{fig:StrutturaConNomenclatura} a pagina \pageref{fig:StrutturaConNomenclatura} mostra la nomenclatura data ai nodi e alle aste. Il sistema di riferimento utilizzato varia in base al metodo utilizzato.
 
 Si elencheranno ora le tre diverse tipologie di risoluzione del problema spiegando sinteticamente i passaggi effettuati. 
+In figura \ref{fig:DiagrammiFinali} a pagina \pageref{fig:DiagrammiFinali} sono rappresentati i diagrammi delle sollecitazioni e la deformata della struttura.
 Infine nel paragrafo \ref{cap:cap4} è presente un confronto dei risultati ottenuti con i diversi metodi.
 \input{rel1/img1/StrutturaConNomiPunti}
 %-----
@@ -81,6 +82,9 @@ Infine nel paragrafo \ref{cap:cap4} è presente un confronto dei risultati otten
 \section{Confronto spostamenti}\label{cap:cap4}
 Come si osserva dalla tabella \ref{tab:SpostamentiUconfronto} a parità di cifre significative, si hanno tutto sommato gli stessi valori per tutti i metodi utilizzati.
 \begin{landscape}
+\input{rel1/DiagrammiFinali.tex}
+
+\vspace{3cm}
 \begin{table}[htb]
     \footnotesize
     \centering

@@ -1,0 +1,110 @@
+\begin{figure}[htb]\centering
+\subfloat[][\emph{Momento flettente}]
+{
+    \begin{tikzpicture}
+    \scaling{2.5};
+    \begin{scope}[color=lightgray]
+        \point{a}{0}{0};
+        %\point{b}{.5}{0};
+        \point{c}{1}{0};
+        \point{d}{2}{.5};
+        \point{e}{2}{1};
+        \point{f}{1}{1};
+        \beam{2}{a}{c}[0][1];
+        \beam{2}{c}{d}[1][1];
+        \beam{2}{d}{e}[1][1];
+        \beam{2}{e}{f}[1][1];
+        \beam{2}{f}{c}[1][1];
+    \end{scope}
+%Diagramma momento:
+    \internalforces{a}{c}{.38}{-.6};
+    \internalforces{c}{f}{-.6}{0};
+    \internalforces{f}{e}{0}{-.3}[-0.1];
+    \internalforces{e}{d}{-.3}{-.6};
+    \internalforces{d}{c}{-.6}{0};
+    \end{tikzpicture}
+}
+\subfloat[][\emph{Sforzo tagliante}]
+{
+    \begin{tikzpicture}
+    \scaling{2.5};
+    \begin{scope}[color=lightgray]
+        \point{a}{0}{0};
+        %\point{b}{.5}{0};
+        \point{c}{1}{0};
+        \point{d}{2}{.5};
+        \point{e}{2}{1};
+        \point{f}{1}{1};
+        \beam{2}{a}{c}[0][1];
+        \beam{2}{c}{d}[1][1];
+        \beam{2}{d}{e}[1][1];
+        \beam{2}{e}{f}[1][1];
+        \beam{2}{f}{c}[1][1];
+    \end{scope}
+%Diagramma taglio:
+    \internalforces{a}{c}{-.8}{-.8}[0][blue];
+    \internalforces{c}{f}{.49}{.49}[0][blue];
+    \internalforces{f}{e}{0}{-.45}[0][blue];
+    \internalforces{e}{d}{-.55}{-.55}[0][blue];
+    \internalforces{d}{c}{.49}{.49}[0][blue];
+    \end{tikzpicture}
+}
+\subfloat[][\emph{Sforzo normale}]
+{
+    \begin{tikzpicture}
+    \scaling{2.5};
+    \begin{scope}[color=lightgray]
+        \point{a}{0}{0};
+        %\point{b}{.5}{0};
+        \point{c}{1}{0};
+        \point{d}{2}{.5};
+        \point{e}{2}{1};
+        \point{f}{1}{1};
+        \beam{2}{a}{c}[0][1];
+        \beam{2}{c}{d}[1][1];
+        \beam{2}{d}{e}[1][1];
+        \beam{2}{e}{f}[1][1];
+        \beam{2}{f}{c}[1][1];
+    \end{scope}
+%Diagramma normale
+    \internalforces{f}{e}{-.32}{-.32}[0][orange];
+    \internalforces{e}{d}{.28}{.28}[0][orange];
+    \internalforces{d}{c}{.49}{.49}[0][orange]
+    \end{tikzpicture}
+}
+\subfloat[][\emph{Deformazione}]
+{
+    \begin{tikzpicture}
+    \scaling{2.5};
+%Indeformata
+    \begin{scope}[color=lightgray]
+        \point{a}{0}{0};
+        %\point{b}{.5}{0};
+        \point{c}{1}{0};
+        \point{d}{2}{.5};
+        \point{e}{2}{1};
+        \point{f}{1}{1};
+        \beam{2}{a}{c}[0][1];
+        \beam{2}{c}{d}[1][1];
+        \beam{2}{d}{e}[1][1];
+        \beam{2}{e}{f}[1][1];
+        \beam{2}{f}{c}[1][1];
+    \end{scope}
+%Deformata
+    \begin{scope}[color=teal]
+        \point{n}{1}{-0.01};
+        \point{h}{2.03}{.43};
+        \point{i}{2.02}{0.93};
+        \point{l}{1.01}{.98};
+        \point{m}{1.01}{.88} ;
+        \beam{2}{a}{n}[0][1];
+        \beam{2}{c}{h}[1][1];
+        \beam{2}{h}{i}[1][1];
+        \beam{2}{i}{m}[1][1];
+        \beam{2}{l}{n}[1][1];
+    \end{scope}
+    \end{tikzpicture}
+}    
+\caption{Rappresentazione dei diagrammi delle sollecitazioni agenti sulla struttura e la relativa deformata}
+\label{fig:DiagrammiFinali}
+\end{figure}
