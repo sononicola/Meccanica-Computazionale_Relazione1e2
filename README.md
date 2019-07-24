@@ -1,7 +1,9 @@
 ## Relazione di meccanica computazionale delle strutture 1
 
 - Risoluzione di una struttura iperstatica tramite diversi metodi di calcolo 
+<img src="/imgGIT/img1.png" alt="drawing" width="300"/>
 - Risoluzione di una lastra soggetta ad una tensione assiale
+<img src="/imgGIT/img2.jpg" alt="drawing" width="300"/>
 
 Lavoro di gruppo di:
  - Angelica Lenzi
