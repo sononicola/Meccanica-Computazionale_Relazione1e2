@@ -11,3 +11,6 @@ Lavoro di gruppo di:
 The LaTeX Project Public License
 
 LPPL Version 1.3c  2008-05-04
+
+## Stanli
+Il pacchetto stanlimod.sty deriva dall'originale stanli: https://github.com/hackl/TikZ-StructuralAnalysis a cui è stata aggiunta una nuova tipologia di carrello senza le ruote e l'indicazione di vincolo a terra. 
