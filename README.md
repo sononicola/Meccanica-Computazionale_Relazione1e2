@@ -6,6 +6,6 @@ Lavoro di gruppo di:
  - Angelica Lenzi
  - Nicola Meoli
 
-##Licenza
+## Licenza
 The LaTeX Project Public License
 LPPL Version 1.3c  2008-05-04
